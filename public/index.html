@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="light-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/khavier.css" />
+    <link rel="stylesheet" href="css/audio_theme.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/audio_theme.js"></script>
+    <script src="js/particles_config.js" defer></script>
+    <script src="js/khavier.js" defer></script>
+  </head>
+
+  <body>
+    <div class="parameters">
+      <span class="material-icons-round md-45 volume"> volume_off </span>
+      <span class="material-icons-round md-45 theme-swapper"> dark_mode </span>
+    </div>
+    <div class="popup-container center-screen">
+      <div class="start-popup">
+        <button id="start">START</button>
+      </div>
+    </div>
+    <div id="score" class="hidden"></div>
+    <div class="board hidden">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div id="line"></div>
+    </div>
+    <div id="particles-js"></div>
+  </body>
+</html>

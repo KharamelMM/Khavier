@@ -1,0 +1,19 @@
+.parameters {
+    color: var(--primary-text-color);
+    display: flex;
+    padding: 0;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 50;
+    user-select: none;
+}
+
+.parameters > span {
+    cursor: pointer;
+}
+@media screen and (orientation: portrait) {
+    .parameters {
+        flex-direction: column;
+    }
+}

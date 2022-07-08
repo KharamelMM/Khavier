@@ -1,0 +1,100 @@
+@font-face {
+    font-family: ubuntu;
+    src: url("../fonts/UbuntuTitling-Bold.ttf");
+}
+
+:root {
+    color: var(--primary-text-color);
+    font-family: ubuntu, sans-serif;
+
+    overflow: hidden;
+    --primary-color: #ffa268;
+    --primary-color-dark: #f24630;
+    --primary-color-light: #f4d2b2;
+    --on-primary-color-text: #fff;
+    --alt-color: #d9e1c0;
+}
+
+:root.light-theme {
+    --primary-text-color: #1d1b18;
+    --primary-transparent-color: rgba(0, 0, 0, 0.5);
+
+
+    --unaccented-text-color: #3d3b38;
+
+
+    --mask-color: rgba(255, 255, 255, 0.8);
+    --hidden: rgba(255, 255, 255, 0);
+}
+
+:root.dark-theme {
+    --bg-color: #000000;
+    --primary-text-color: #faf6f0;
+    --primary-transparent-color: rgba(255, 255, 255, 0.3);
+
+    --on-primary-color-text: #fff;
+    --unaccented-text-color: #b5ada7;
+
+    --mask-color: rgba(0, 0, 0, 0.9);
+    --hidden: rgba(0, 0, 0, 0);
+}
+
+body {
+    transition: 0.2s;
+
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+button{
+    font-family: ubuntu, sans-serif;
+    border-color: var(--primary-color);
+    border-width: thick;
+}
+
+#particles-js {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    z-index: -10;
+}
+
+.hidden, .hidden * {
+    user-select: none;
+    pointer-events: none;
+    cursor: auto !important;
+    color: var(--hidden) !important;
+    background-color: var(--hidden) !important;;
+    border-color: var(--hidden) !important;;
+    transition: 0.2s !important;;
+}
+
+.center-screen {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.popup-container{
+    z-index: 100;
+
+}
+
+.start-popup{
+    width: 75vw;
+    height: 75vh;
+    background-color: var(--mask-color);
+}
+
+#start{
+    cursor: pointer;
+    font-size: 3em;
+    border-radius: 15px;
+}
