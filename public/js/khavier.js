@@ -9,8 +9,8 @@ function prepareBoard() {
     $("#score").removeClass("hidden").text(score);
     $(".popup-container").addClass("hidden");
     $(".board").removeClass("hidden");
-    var tileheight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tile-height"), 10);
-
+    var tileheight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tile-height"), 10) / 100;
+    tileheight *= $(document).height();
     loopTileSliding = setInterval(moveTilesDown, 10)
     loopTileCreation = setInterval(generateTile, tileheight * 10 / speed)
     music.play();
