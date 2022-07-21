@@ -8,16 +8,16 @@
     font-family: ubuntu, sans-serif;
 
     overflow: hidden;
-    --primary-color: #ffa268;
-    --primary-color-dark: #f24630;
-    --primary-color-light: #f4d2b2;
+    --primary-color-light: #d6eff6;
+    --primary-color: #bad5f0;
+    --primary-transparent-color: #7e91a330;
+    --primary-color-dark: #00179b;
     --on-primary-color-text: #fff;
     --alt-color: #d9e1c0;
 }
 
 :root.light-theme {
     --primary-text-color: #1d1b18;
-    --primary-transparent-color: rgba(0, 0, 0, 0.5);
 
 
     --unaccented-text-color: #3d3b38;
@@ -30,7 +30,6 @@
 :root.dark-theme {
     --bg-color: #000000;
     --primary-text-color: #faf6f0;
-    --primary-transparent-color: rgba(255, 255, 255, 0.3);
 
     --on-primary-color-text: #fff;
     --unaccented-text-color: #b5ada7;
@@ -83,7 +82,7 @@ button{
 }
 
 .popup-container{
-    z-index: 100;
+    z-index: 25;
 
 }
 

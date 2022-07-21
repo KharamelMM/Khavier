@@ -39,7 +39,7 @@
     width: 100%;
     top: calc(-1 * var(--tile-height));
     z-index: 10;
-    background: linear-gradient(var(--primary-transparent-color) 0%, var(--primary-text-color) 75%);
+    background: linear-gradient(var(--primary-color-light) 0%, var(--primary-color) 50%);
     height: var(--tile-height);
     cursor: pointer !important;
     pointer-events: auto;
