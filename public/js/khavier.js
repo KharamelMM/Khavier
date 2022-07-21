@@ -1,18 +1,25 @@
 const music = new Audio('../sound/music/Pierre.mp3');
-var speed = 2;
+const bpm = 100;
+var dx;
+var speed = 10;
 var score = 0;
 var loopTileSliding;
 var loopTileCreation;
-
+var board_height;
 function prepareBoard() {
+    board_height = $(".board").height();
     score = 0;
     $("#score").removeClass("hidden").text(score);
     $(".popup-container").addClass("hidden");
     $(".board").removeClass("hidden");
     var tileheight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--tile-height"), 10) / 100;
     tileheight *= $(document).height();
-    loopTileSliding = setInterval(moveTilesDown, 10)
-    loopTileCreation = setInterval(generateTile, tileheight * 10 / speed)
+    console.log(tileheight);
+    var dxDivisor = 100;
+    dx = tileheight/dxDivisor;
+    var speed = 60000/bpm;
+    loopTileSliding = setInterval(moveTilesDown, speed/dxDivisor)
+    loopTileCreation = setInterval(generateTile, speed);
     music.play();
 }
 
@@ -21,9 +28,7 @@ function generateTile(){
 }
 
 function createTile(index){
-    var tile = $("<div class='tile'/>");
-    tile.on("click", tilePressed)
-    $(".line:nth-child("+ index +")").append(tile);
+    $(".line:nth-child("+ index +")").append($("<div class='tile'/>").on("click", tilePressed));
 }
 
 function tilePressed(){
@@ -33,11 +38,9 @@ function tilePressed(){
 }
 
 function moveTilesDown(){
-    var board_height = $(".board").height();
+
     $(".tile").css('top', function (index, curValue) {
-        curValue = (parseInt(curValue, 10) + speed);
-        if(curValue >= 0 && curValue < speed){
-        }
+        curValue = (parseFloat(curValue) + dx);
         if(curValue > board_height){
             gameOver();
         }else{
