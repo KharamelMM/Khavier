@@ -1,5 +1,3 @@
-let mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
 let dx;
 let score = 0;
 let ticker;
@@ -98,12 +96,9 @@ function createTiles(tabIndex) {
                 break;
         }
         var tile = $("<div class='tile' data-note='" + note + "' data-rowid='" + rowid + "'/>")
-            .css("height", tile_height + 'px');
-        if (mobile) {
-            tile.on("touchmove", tilePressed)
-        } else {
-            tile.on("click", tilePressed);
-        }
+            .css("height", tile_height + 'px')
+            .on("touchmove", tilePressed);
+
         $(".line:nth-child(" + index + ")").append(tile);
     }
     rowid++;
