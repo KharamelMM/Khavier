@@ -16,7 +16,7 @@ const MAX_ROWS = 8;
 let rowid = 0;
 
 function getTileHeight(){
-    var tile = $("<div class='tile' id='temp'/>").on("click", tilePressed)
+    var tile = $("<div class='tile' id='temp'/>");
     $(".line").append(tile);
     let height = tile.height();
     tile.remove();
@@ -96,7 +96,9 @@ function createTiles(tabIndex) {
                 note = 'c4';
                 break;
         }
-        var tile = $("<div class='tile' data-note='" + note + "' data-rowid='"+rowid+"'/>").on("click", tilePressed)
+        var tile = $("<div class='tile' data-note='" + note + "' data-rowid='"+rowid+"'/>")
+            .on("click", tilePressed)
+            .on("touchmove", tilePressed)
             .css("height", tile_height + 'px');
         $(".line:nth-child(" + index + ")").append(tile);
     }
