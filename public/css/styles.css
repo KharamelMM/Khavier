@@ -83,13 +83,11 @@ button{
 
 .popup-container{
     z-index: 25;
-
 }
 
 .start-popup{
     width: 75vw;
     height: 75vh;
-    background-color: var(--mask-color);
 }
 
 #start{

@@ -9,7 +9,8 @@
     --board-width: calc(var(--tile-height) * 2);
     position: relative;
     margin-top: 5vh;
-    height: 90vh;
+    --board-height: 90vh;
+    height: var(--board-height);
     width: var(--board-width);
     margin-left: calc(50vw - var(--board-width)/2);
     display: flex;
@@ -37,7 +38,7 @@
 .tile{
     position: absolute;
     width: 100%;
-    top: calc(-1 * var(--tile-height));
+    top: calc(-1 * var(--board-height));
     z-index: 10;
     background: linear-gradient(var(--primary-color-light) 0%, var(--primary-color) 50%);
     height: var(--tile-height);
@@ -62,17 +63,17 @@
     top: 10vh;
     width: 100vw;
     height: 20vh;
-    background-color: var(--mask-color);
     text-align: center;
     z-index: 100;
     font-size: 10vh;
+    pointer-events: none;
 }
 
 @media screen and (orientation: portrait){
     .board{
         --board-width: 100vw;
         position: relative;
-        height: 100vh;
+        --board-height: 100vh;
         width: var(--board-width);
         margin: 0;
         display: flex;
