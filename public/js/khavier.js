@@ -97,7 +97,7 @@ function createTiles(tabIndex) {
         }
         var tile = $("<div class='tile' data-note='" + note + "' data-rowid='" + rowid + "'/>")
             .css("height", tile_height + 'px')
-            .on("touchmove", tilePressed);
+            .on("click", tilePressed);
 
         $(".line:nth-child(" + index + ")").append(tile);
     }
